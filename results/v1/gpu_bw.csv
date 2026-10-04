@@ -1,0 +1,3 @@
+device_index,name,copy_kernel_gbs,memcpy_d2d_gbs,pinned_h2d_gbs,pinned_d2h_gbs
+0,NVIDIA A100 80GB PCIe,1653.3,1714.8,12.3,13.1
+1,NVIDIA A100 80GB PCIe,1650.7,1715.5,12.3,13.1
