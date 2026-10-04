@@ -94,9 +94,14 @@ Stats run_cuda(const Grid& g, double* h_u, int steps, bool aware) {
   }
   CK(cudaMemcpy(u, h_u, bytes, cudaMemcpyHostToDevice));
   CK(cudaMemcpy(v, h_u, bytes, cudaMemcpyHostToDevice));   // v needs the zero ghost layers too
+  // The boundary stream gets the highest priority. The interior kernel has tens of thousands of blocks queued;
+  // without priorities, a pack, unpack or shell kernel issued after it waits for SMs behind those blocks, so the
+  // halo path only starts once the interior is almost done and the overlap is lost.
+  int prio_low, prio_high;
+  CK(cudaDeviceGetStreamPriorityRange(&prio_low, &prio_high));
   cudaStream_t s_in, s_bd;
-  CK(cudaStreamCreate(&s_in));
-  CK(cudaStreamCreate(&s_bd));
+  CK(cudaStreamCreateWithPriority(&s_in, cudaStreamNonBlocking, prio_low));
+  CK(cudaStreamCreateWithPriority(&s_bd, cudaStreamNonBlocking, prio_high));
   cudaEvent_t e0, e1;
   CK(cudaEventCreate(&e0));
   CK(cudaEventCreate(&e1));
@@ -115,14 +120,17 @@ Stats run_cuda(const Grid& g, double* h_u, int steps, bool aware) {
   MPI_Barrier(g.cart);
   const double t0 = MPI_Wtime();
   for (int s = 0; s < steps; ++s) {
-    for (int f = 0; f < 6; ++f) {   // boundary stream: pack (and stage) every face that has a neighbour
+    // boundary stream: pack every face that has a neighbour, then stage them. All packs go first so that they are
+    // queued ahead of the interior kernel, not each one behind the previous face's copy.
+    for (int f = 0; f < 6; ++f) {
       if (g.nbr[f] == MPI_PROC_NULL) continue;
       const Face& F = g.send[f];
       face_kernel<<<dim3(cdiv(F.na, 128), F.nb), 128, 0, s_bd>>>(u, dsend + g.boff[f], F, false);
-      if (!aware)
+    }
+    for (int f = 0; f < 6 && !aware; ++f)
+      if (g.nbr[f] != MPI_PROC_NULL)
         CK(cudaMemcpyAsync(hsend + g.boff[f], dsend + g.boff[f], (g.boff[f + 1] - g.boff[f]) * sizeof(double),
                            cudaMemcpyDeviceToHost, s_bd));
-    }
     CK(cudaEventRecord(e0, s_in));   // interior stream: needs no ghost that is in flight
     if (nin > 0) interior_kernel<<<grid, tile, 0, s_in>>>(u, v, in, sy, sz);
     CK(cudaEventRecord(e1, s_in));
@@ -133,12 +141,13 @@ Stats run_cuda(const Grid& g, double* h_u, int steps, bool aware) {
     MPI_Waitall(12, req, MPI_STATUSES_IGNORE);
     st.t_wait += MPI_Wtime() - tw;
 
-    for (int f = 0; f < 6; ++f) {   // boundary stream: ghosts in, then the shell
-      if (g.nbr[f] == MPI_PROC_NULL) continue;
-      const Face& F = g.recv[f];
-      if (!aware)
+    for (int f = 0; f < 6 && !aware; ++f)   // boundary stream: ghosts in, then the shell
+      if (g.nbr[f] != MPI_PROC_NULL)
         CK(cudaMemcpyAsync(drecv + g.boff[f], hrecv + g.boff[f], (g.boff[f + 1] - g.boff[f]) * sizeof(double),
                            cudaMemcpyHostToDevice, s_bd));
+    for (int f = 0; f < 6; ++f) {
+      if (g.nbr[f] == MPI_PROC_NULL) continue;
+      const Face& F = g.recv[f];
       face_kernel<<<dim3(cdiv(F.na, 128), F.nb), 128, 0, s_bd>>>(u, drecv + g.boff[f], F, true);
     }
     for (const Box& b : shell)
