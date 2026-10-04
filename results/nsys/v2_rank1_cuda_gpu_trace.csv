@@ -1,0 +1,224 @@
+Start (ns),Duration (ns),CorrId,GrdX,GrdY,GrdZ,BlkX,BlkY,BlkZ,Reg/Trd,StcSMem (MB),DymSMem (MB),Bytes (MB),Throughput (MB/s),SrcMemKd,DstMemKd,Device,Ctx,GreenCtx,Strm,Name
+4280958707,457628124,1256,,,,,,,,,,2168.521,4337.042,Pageable,Device,NVIDIA A100 80GB PCIe (1),1,,7,[CUDA memcpy Host-to-Device]
+4738825264,457022584,1257,,,,,,,,,,2168.521,4337.042,Pageable,Device,NVIDIA A100 80GB PCIe (1),1,,7,[CUDA memcpy Host-to-Device]
+5197658418,9696,1266,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5197676818,7776,1268,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5197699218,340482,1269,,,,,,,,,,4.194,12318.671,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5198042868,343330,1270,,,,,,,,,,4.194,12213.813,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5198396726,3169650,1274,32,64,16,32,8,1,30,0.003,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,14,"interior_kernel(const double *, double *, Box, long, long)"
+5199790878,364034,1277,,,,,,,,,,4.194,11517.559,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5200158688,368675,1278,,,,,,,,,,4.194,11374.952,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5200531971,29024,1280,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5200562083,29152,1282,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5201578025,16192,1285,2044,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5201595145,14880,1287,2048,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5201637001,6336,1293,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5201644361,5248,1295,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5201651145,321922,1296,,,,,,,,,,4.194,13027.508,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5201665001,3196434,1300,32,64,16,32,8,1,30,0.003,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,14,"interior_kernel(const double *, double *, Box, long, long)"
+5201977579,321826,1297,,,,,,,,,,4.194,13031.703,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5203277554,345122,1303,,,,,,,,,,4.194,12150.899,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5203626004,343234,1304,,,,,,,,,,4.194,12218.008,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5203973590,27968,1306,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5204002646,29985,1308,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5204033687,40032,1310,2044,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5204075127,40064,1312,2048,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5204879803,7936,1318,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5204888667,7297,1320,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5204901020,321121,1321,,,,,,,,,,4.194,13061.063,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5204904732,3202610,1325,32,64,16,32,8,1,30,0.003,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,14,"interior_kernel(const double *, double *, Box, long, long)"
+5205226333,321730,1322,,,,,,,,,,4.194,13035.897,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5206501701,344162,1328,,,,,,,,,,4.194,12184.453,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5206848775,342850,1329,,,,,,,,,,4.194,12230.590,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5207195241,29152,1331,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5207225737,29984,1333,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5207256905,37632,1335,2044,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5207305385,28896,1337,2048,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5208121742,8096,1343,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5208130862,7520,1345,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5208144078,320898,1346,,,,,,,,,,4.194,13069.451,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5208146382,3198674,1350,32,64,16,32,8,1,30,0.003,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,14,"interior_kernel(const double *, double *, Box, long, long)"
+5208468624,321058,1347,,,,,,,,,,4.194,13061.063,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5209746743,344482,1353,,,,,,,,,,4.194,12171.870,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5210094393,343074,1354,,,,,,,,,,4.194,12222.202,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5210441339,28640,1356,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5210471259,28705,1358,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5210501148,38944,1360,2044,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5210542876,37152,1362,2048,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5211359777,7808,1368,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5211368641,9440,1370,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5211380609,321281,1371,,,,,,,,,,4.194,13052.674,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5211381441,3205810,1375,32,64,16,32,8,1,30,0.003,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,14,"interior_kernel(const double *, double *, Box, long, long)"
+5211705410,321282,1372,,,,,,,,,,4.194,13052.674,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5212942314,343778,1378,,,,,,,,,,4.194,12197.036,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5213288620,343106,1379,,,,,,,,,,4.194,12222.202,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5213635982,29280,1381,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5213666414,30656,1383,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5213698094,38176,1385,2044,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5213746382,31296,1387,2048,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5214600627,8064,1393,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5214609715,9824,1395,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5214621587,321090,1396,,,,,,,,,,4.194,13061.063,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5214621811,3200659,1400,32,64,16,32,8,1,30,0.003,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,14,"interior_kernel(const double *, double *, Box, long, long)"
+5214946037,321922,1397,,,,,,,,,,4.194,13027.508,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5216172188,343874,1403,,,,,,,,,,4.194,12197.036,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5216519134,343266,1404,,,,,,,,,,4.194,12218.008,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5216866752,28576,1406,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5216896704,28672,1408,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5216926560,37505,1410,2044,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5216976257,29856,1412,2048,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5217836742,7552,1418,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5217845286,9472,1420,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5217857446,320802,1421,,,,,,,,,,4.194,13073.646,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5217859142,3198066,1425,32,64,16,32,8,1,30,0.003,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,14,"interior_kernel(const double *, double *, Box, long, long)"
+5218182088,321185,1422,,,,,,,,,,4.194,13056.868,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5219409807,344546,1428,,,,,,,,,,4.194,12171.870,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5219757521,342978,1429,,,,,,,,,,4.194,12226.396,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5220105555,30688,1431,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5220137395,30432,1433,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5220169075,38080,1435,2044,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5220215475,29856,1437,2048,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5221070744,7616,1443,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5221079352,7424,1445,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5221091288,321154,1446,,,,,,,,,,4.194,13056.868,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5221093144,3200947,1450,32,64,16,32,8,1,30,0.003,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,14,"interior_kernel(const double *, double *, Box, long, long)"
+5221415386,321218,1447,,,,,,,,,,4.194,13056.868,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5222661345,344290,1453,,,,,,,,,,4.194,12180.259,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5223009123,343074,1454,,,,,,,,,,4.194,12222.202,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5223356517,28320,1456,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5223385989,29473,1458,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5223416454,39072,1460,2044,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5223467014,28672,1462,2048,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5224307947,7904,1468,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5224316875,10144,1470,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5224329195,320770,1471,,,,,,,,,,4.194,13073.646,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5224330699,3196530,1475,32,64,16,32,8,1,30,0.003,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,14,"interior_kernel(const double *, double *, Box, long, long)"
+5224653805,321089,1472,,,,,,,,,,4.194,13061.063,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5225896820,344066,1478,,,,,,,,,,4.194,12188.647,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5226244054,342818,1479,,,,,,,,,,4.194,12230.590,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5226591032,28576,1481,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5226620952,28224,1483,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5226650360,38240,1485,2044,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5226690104,38848,1487,2048,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5227540765,7968,1493,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5227549661,9472,1495,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5227560925,320930,1496,,,,,,,,,,4.194,13065.257,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5227562333,3196307,1500,32,64,16,32,8,1,30,0.003,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,14,"interior_kernel(const double *, double *, Box, long, long)"
+5227886079,321666,1497,,,,,,,,,,4.194,13035.897,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5229133510,344130,1503,,,,,,,,,,4.194,12184.453,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5229480968,343010,1504,,,,,,,,,,4.194,12226.396,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5229828426,27360,1506,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5229857482,28481,1508,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5229887179,38304,1510,2044,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5229938123,28384,1512,2048,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5230771888,7712,1518,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5230780624,9664,1520,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5230792688,321058,1521,,,,,,,,,,4.194,13061.063,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5230794704,3200466,1525,32,64,16,32,8,1,30,0.003,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,14,"interior_kernel(const double *, double *, Box, long, long)"
+5231117042,322177,1522,,,,,,,,,,4.194,13014.925,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5232380473,344066,1528,,,,,,,,,,4.194,12188.647,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5232728123,343234,1529,,,,,,,,,,4.194,12218.008,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5233075709,28224,1531,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5233105085,27744,1533,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5233133821,38496,1535,2044,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5233185469,29249,1537,2048,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5234010434,8064,1543,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5234019490,9600,1545,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5234029570,321122,1546,,,,,,,,,,4.194,13061.063,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5234032354,3202547,1550,32,64,16,32,8,1,30,0.003,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,14,"interior_kernel(const double *, double *, Box, long, long)"
+5234354628,321378,1547,,,,,,,,,,4.194,13048.480,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5235639275,344002,1553,,,,,,,,,,4.194,12188.647,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5235986829,343426,1554,,,,,,,,,,4.194,12209.619,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5236334543,29281,1556,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5236365200,29920,1558,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5236396272,38464,1560,2044,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5236445232,30176,1562,2048,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5237248533,7840,1568,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5237257333,9632,1570,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5237268501,320834,1571,,,,,,,,,,4.194,13069.451,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5237270005,3213874,1575,32,64,16,32,8,1,30,0.003,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,14,"interior_kernel(const double *, double *, Box, long, long)"
+5237592983,320930,1572,,,,,,,,,,4.194,13065.257,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5238862270,343874,1578,,,,,,,,,,4.194,12197.036,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5239209632,343458,1579,,,,,,,,,,4.194,12209.619,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5239557890,29280,1581,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5239588354,29376,1583,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5239618850,39904,1585,2044,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5239669379,29312,1587,2048,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5240497895,8256,1593,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5240507175,10048,1595,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5240518727,320962,1596,,,,,,,,,,4.194,13065.257,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5240520199,3237587,1600,32,64,16,32,8,1,30,0.003,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,14,"interior_kernel(const double *, double *, Box, long, long)"
+5240843241,321730,1597,,,,,,,,,,4.194,13035.897,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5242106705,343873,1603,,,,,,,,,,4.194,12197.036,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5242453938,343490,1604,,,,,,,,,,4.194,12209.619,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5242802196,29089,1606,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5242832437,29920,1608,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5242863573,38176,1610,2044,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5242912373,29568,1612,2048,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5243771194,8192,1618,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5243780538,8736,1620,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5243790458,320962,1621,,,,,,,,,,4.194,13065.257,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5243792858,3233139,1625,32,64,16,32,8,1,30,0.003,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,14,"interior_kernel(const double *, double *, Box, long, long)"
+5244114556,321762,1622,,,,,,,,,,4.194,13031.703,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5245380771,344482,1628,,,,,,,,,,4.194,12171.870,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5245729637,343170,1629,,,,,,,,,,4.194,12222.202,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5246076551,28320,1631,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5246105959,28993,1633,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5246136200,38720,1635,2044,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5246179912,36800,1637,2048,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5247039629,8128,1643,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5247048845,10016,1645,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5247060077,321186,1646,,,,,,,,,,4.194,13056.868,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5247061933,3238418,1650,32,64,16,32,8,1,30,0.003,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,14,"interior_kernel(const double *, double *, Box, long, long)"
+5247385487,321794,1647,,,,,,,,,,4.194,13031.703,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5248683414,344354,1653,,,,,,,,,,4.194,12176.065,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5249031064,343330,1654,,,,,,,,,,4.194,12213.813,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5249379674,29056,1656,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5249410138,30016,1658,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5249441402,40065,1660,2044,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5249490811,31168,1662,2048,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5250314271,8033,1668,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5250323488,9248,1670,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5250332416,321633,1671,,,,,,,,,,4.194,13040.091,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5250337088,3235058,1675,32,64,16,32,8,1,30,0.003,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,14,"interior_kernel(const double *, double *, Box, long, long)"
+5250657825,321698,1672,,,,,,,,,,4.194,13035.897,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5251978825,344834,1678,,,,,,,,,,4.194,12159.287,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5252327179,343042,1679,,,,,,,,,,4.194,12226.396,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5252675277,28192,1681,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5252705965,28992,1683,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5252736205,39137,1685,2044,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5252785230,30848,1687,2048,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5253585906,8128,1693,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5253595250,9824,1695,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5253604914,321058,1696,,,,,,,,,,4.194,13061.063,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5253607826,3234387,1700,32,64,16,32,8,1,30,0.003,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,14,"interior_kernel(const double *, double *, Box, long, long)"
+5253930228,320898,1697,,,,,,,,,,4.194,13069.451,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5255266396,344194,1703,,,,,,,,,,4.194,12184.453,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5255614078,343746,1704,,,,,,,,,,4.194,12201.230,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5255962656,29600,1706,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5255993376,29632,1708,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5256024160,39552,1710,2044,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5256073824,30497,1712,2048,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5256855877,8224,1718,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5256865285,9312,1720,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5256874469,321218,1721,,,,,,,,,,4.194,13056.868,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5256878821,3244499,1725,32,64,16,32,8,1,30,0.003,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,14,"interior_kernel(const double *, double *, Box, long, long)"
+5257199655,322626,1722,,,,,,,,,,4.194,12998.148,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5258559631,344290,1728,,,,,,,,,,4.194,12180.259,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5258907441,343010,1729,,,,,,,,,,4.194,12226.396,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5259254963,28992,1731,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5259285299,30592,1733,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5259317107,39392,1735,2044,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5259359987,37056,1737,2048,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5260137208,8640,1743,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5260147000,7808,1745,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5260161752,321282,1746,,,,,,,,,,4.194,13052.674,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5260163800,3262611,1750,32,64,16,32,8,1,30,0.003,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,14,"interior_kernel(const double *, double *, Box, long, long)"
+5260487130,321698,1747,,,,,,,,,,4.194,13035.897,Device,Pinned,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Device-to-Host]
+5261843489,344930,1753,,,,,,,,,,4.194,12159.287,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5262192227,343266,1754,,,,,,,,,,4.194,12218.008,Pinned,Device,NVIDIA A100 80GB PCIe (1),1,,15,[CUDA memcpy Host-to-Device]
+5262540101,29921,1756,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5262571206,29984,1758,8,512,1,128,1,1,16,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"face_kernel(double *, double *, Face, bool)"
+5262602310,40096,1760,2044,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5262651014,29984,1762,2048,1,1,256,1,1,24,0.000,0.000,,,,,NVIDIA A100 80GB PCIe (1),1,,15,"shell_kernel(const double *, double *, Box, long, long)"
+5263451339,449451468,1767,,,,,,,,,,2168.521,4337.042,Device,Pageable,NVIDIA A100 80GB PCIe (1),1,,7,[CUDA memcpy Device-to-Host]

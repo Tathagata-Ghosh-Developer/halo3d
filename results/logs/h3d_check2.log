@@ -1,0 +1,121 @@
+### mpirun --bind-to none --oversubscribe -np 2 -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend omp --n 16 --steps 50 --csv <outdir>/results_v2/check.csv
+halo3d omp | nodes 1 | ranks 2 = 1x1x2 | threads/rank 2 | global 16x16x16 | local(rank 0) 16x16x8 | steps 50
+time 0.0019 s (0.038 ms/step) | halo wait 0.0008 s | interior 0.0002 s | 0.108 GLUP/s | 1.7 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 4.418e-15 (PASS, tol 1e-09) | vs continuous PDE 2.294e-03
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 8 -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend omp --n 16 --steps 50 --csv <outdir>/results_v2/check.csv
+halo3d omp | nodes 2 | ranks 8 = 2x2x2 | threads/rank 2 | global 16x16x16 | local(rank 0) 8x8x8 | steps 50
+time 0.0108 s (0.216 ms/step) | halo wait 0.0069 s | interior 0.0005 s | 0.019 GLUP/s | 0.3 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 4.418e-15 (PASS, tol 1e-09) | vs continuous PDE 2.294e-03
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 8 -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend omp --n 17 --steps 50 --csv <outdir>/results_v2/check.csv
+halo3d omp | nodes 2 | ranks 8 = 2x2x2 | threads/rank 2 | global 17x17x17 | local(rank 0) 9x9x9 | steps 50
+time 0.0050 s (0.101 ms/step) | halo wait 0.0040 s | interior 0.0002 s | 0.049 GLUP/s | 0.8 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 2.767e-15 (PASS, tol 1e-09) | vs continuous PDE 1.824e-03
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 12 -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend omp --n 23 --steps 30 --csv <outdir>/results_v2/check.csv
+halo3d omp | nodes 2 | ranks 12 = 2x2x3 | threads/rank 2 | global 23x23x23 | local(rank 0) 12x12x8 | steps 30
+time 0.0071 s (0.236 ms/step) | halo wait 0.0063 s | interior 0.0003 s | 0.052 GLUP/s | 0.8 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 1.839e-15 (PASS, tol 1e-09) | vs continuous PDE 3.452e-04
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 1 --map-by ppr:2:node -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend cuda --n 16 --steps 50 --csv <outdir>/results_v2/check.csv
+halo3d cuda | nodes 1 | ranks 1 = 1x1x1 | threads/rank 4 | global 16x16x16 | local(rank 0) 16x16x16 | steps 50
+time 0.0013 s (0.026 ms/step) | halo wait 0.0000 s | interior 0.0009 s | 0.158 GLUP/s | 2.5 GB/s at 16 B/LUP | interior kernel 3.6 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 4.418e-15 (PASS, tol 1e-09) | vs continuous PDE 2.294e-03
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 1 --map-by ppr:2:node -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend cuda --n 16 --steps 50 --cuda-aware --csv <outdir>/results_v2/check.csv
+halo3d cuda (cuda-aware) | nodes 1 | ranks 1 = 1x1x1 | threads/rank 4 | global 16x16x16 | local(rank 0) 16x16x16 | steps 50
+time 0.0014 s (0.027 ms/step) | halo wait 0.0000 s | interior 0.0010 s | 0.151 GLUP/s | 2.4 GB/s at 16 B/LUP | interior kernel 3.4 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 4.418e-15 (PASS, tol 1e-09) | vs continuous PDE 2.294e-03
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 1 --map-by ppr:2:node -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend cuda --n 17 --steps 50 --csv <outdir>/results_v2/check.csv
+halo3d cuda | nodes 1 | ranks 1 = 1x1x1 | threads/rank 4 | global 17x17x17 | local(rank 0) 17x17x17 | steps 50
+time 0.0013 s (0.027 ms/step) | halo wait 0.0000 s | interior 0.0010 s | 0.185 GLUP/s | 3.0 GB/s at 16 B/LUP | interior kernel 4.1 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.767e-15 (PASS, tol 1e-09) | vs continuous PDE 1.824e-03
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 1 --map-by ppr:2:node -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend cuda --n 17 --steps 50 --cuda-aware --csv <outdir>/results_v2/check.csv
+halo3d cuda (cuda-aware) | nodes 1 | ranks 1 = 1x1x1 | threads/rank 4 | global 17x17x17 | local(rank 0) 17x17x17 | steps 50
+time 0.0014 s (0.028 ms/step) | halo wait 0.0000 s | interior 0.0010 s | 0.175 GLUP/s | 2.8 GB/s at 16 B/LUP | interior kernel 3.9 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.767e-15 (PASS, tol 1e-09) | vs continuous PDE 1.824e-03
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 1 --map-by ppr:2:node -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend cuda --n 64 --steps 50 --csv <outdir>/results_v2/check.csv
+halo3d cuda | nodes 1 | ranks 1 = 1x1x1 | threads/rank 4 | global 64x64x64 | local(rank 0) 64x64x64 | steps 50
+time 0.0020 s (0.039 ms/step) | halo wait 0.0000 s | interior 0.0016 s | 6.721 GLUP/s | 107.5 GB/s at 16 B/LUP | interior kernel 134.3 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 6.336e-15 (PASS, tol 1e-09) | vs continuous PDE 1.066e-05
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 1 --map-by ppr:2:node -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend cuda --n 64 --steps 50 --cuda-aware --csv <outdir>/results_v2/check.csv
+halo3d cuda (cuda-aware) | nodes 1 | ranks 1 = 1x1x1 | threads/rank 4 | global 64x64x64 | local(rank 0) 64x64x64 | steps 50
+time 0.0019 s (0.039 ms/step) | halo wait 0.0000 s | interior 0.0016 s | 6.725 GLUP/s | 107.6 GB/s at 16 B/LUP | interior kernel 135.1 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 6.336e-15 (PASS, tol 1e-09) | vs continuous PDE 1.066e-05
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 2 --map-by ppr:2:node -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend cuda --n 16 --steps 50 --csv <outdir>/results_v2/check.csv
+halo3d cuda | nodes 1 | ranks 2 = 1x1x2 | threads/rank 4 | global 16x16x16 | local(rank 0) 16x16x8 | steps 50
+time 0.0021 s (0.041 ms/step) | halo wait 0.0002 s | interior 0.0005 s | 0.100 GLUP/s | 1.6 GB/s at 16 B/LUP | interior kernel 2.9 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 4.418e-15 (PASS, tol 1e-09) | vs continuous PDE 2.294e-03
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 2 --map-by ppr:2:node -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend cuda --n 16 --steps 50 --cuda-aware --csv <outdir>/results_v2/check.csv
+halo3d cuda (cuda-aware) | nodes 1 | ranks 2 = 1x1x2 | threads/rank 4 | global 16x16x16 | local(rank 0) 16x16x8 | steps 50
+time 0.0098 s (0.197 ms/step) | halo wait 0.0053 s | interior 0.0005 s | 0.021 GLUP/s | 0.3 GB/s at 16 B/LUP | interior kernel 2.8 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 4.418e-15 (PASS, tol 1e-09) | vs continuous PDE 2.294e-03
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 2 --map-by ppr:2:node -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend cuda --n 17 --steps 50 --csv <outdir>/results_v2/check.csv
+halo3d cuda | nodes 1 | ranks 2 = 1x1x2 | threads/rank 4 | global 17x17x17 | local(rank 0) 17x17x9 | steps 50
+time 0.0021 s (0.042 ms/step) | halo wait 0.0002 s | interior 0.0005 s | 0.117 GLUP/s | 1.9 GB/s at 16 B/LUP | interior kernel 3.5 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.767e-15 (PASS, tol 1e-09) | vs continuous PDE 1.824e-03
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 2 --map-by ppr:2:node -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend cuda --n 17 --steps 50 --cuda-aware --csv <outdir>/results_v2/check.csv
+halo3d cuda (cuda-aware) | nodes 1 | ranks 2 = 1x1x2 | threads/rank 4 | global 17x17x17 | local(rank 0) 17x17x9 | steps 50
+time 0.0388 s (0.775 ms/step) | halo wait 0.0344 s | interior 0.0005 s | 0.006 GLUP/s | 0.1 GB/s at 16 B/LUP | interior kernel 3.5 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.767e-15 (PASS, tol 1e-09) | vs continuous PDE 1.824e-03
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 2 --map-by ppr:2:node -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend cuda --n 64 --steps 50 --csv <outdir>/results_v2/check.csv
+halo3d cuda | nodes 1 | ranks 2 = 1x1x2 | threads/rank 4 | global 64x64x64 | local(rank 0) 64x64x32 | steps 50
+time 0.0029 s (0.057 ms/step) | halo wait 0.0005 s | interior 0.0014 s | 4.574 GLUP/s | 73.2 GB/s at 16 B/LUP | interior kernel 75.2 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 6.336e-15 (PASS, tol 1e-09) | vs continuous PDE 1.066e-05
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 2 --map-by ppr:2:node -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend cuda --n 64 --steps 50 --cuda-aware --csv <outdir>/results_v2/check.csv
+halo3d cuda (cuda-aware) | nodes 1 | ranks 2 = 1x1x2 | threads/rank 4 | global 64x64x64 | local(rank 0) 64x64x32 | steps 50
+time 0.0105 s (0.209 ms/step) | halo wait 0.0059 s | interior 0.0013 s | 1.252 GLUP/s | 20.0 GB/s at 16 B/LUP | interior kernel 75.3 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 6.336e-15 (PASS, tol 1e-09) | vs continuous PDE 1.066e-05
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 4 --map-by ppr:2:node -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend cuda --n 16 --steps 50 --csv <outdir>/results_v2/check.csv
+halo3d cuda | nodes 2 | ranks 4 = 1x2x2 | threads/rank 4 | global 16x16x16 | local(rank 0) 16x8x8 | steps 50
+time 0.0030 s (0.060 ms/step) | halo wait 0.0005 s | interior 0.0005 s | 0.068 GLUP/s | 1.1 GB/s at 16 B/LUP | interior kernel 1.3 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 4.418e-15 (PASS, tol 1e-09) | vs continuous PDE 2.294e-03
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 4 --map-by ppr:2:node -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend cuda --n 16 --steps 50 --cuda-aware --csv <outdir>/results_v2/check.csv
+halo3d cuda (cuda-aware) | nodes 2 | ranks 4 = 1x2x2 | threads/rank 4 | global 16x16x16 | local(rank 0) 16x8x8 | steps 50
+time 0.0134 s (0.267 ms/step) | halo wait 0.0063 s | interior 0.0005 s | 0.015 GLUP/s | 0.2 GB/s at 16 B/LUP | interior kernel 1.4 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 4.418e-15 (PASS, tol 1e-09) | vs continuous PDE 2.294e-03
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 4 --map-by ppr:2:node -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend cuda --n 17 --steps 50 --csv <outdir>/results_v2/check.csv
+halo3d cuda | nodes 2 | ranks 4 = 1x2x2 | threads/rank 4 | global 17x17x17 | local(rank 0) 17x9x9 | steps 50
+time 0.0028 s (0.056 ms/step) | halo wait 0.0003 s | interior 0.0005 s | 0.087 GLUP/s | 1.4 GB/s at 16 B/LUP | interior kernel 1.8 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.767e-15 (PASS, tol 1e-09) | vs continuous PDE 1.824e-03
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 4 --map-by ppr:2:node -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend cuda --n 17 --steps 50 --cuda-aware --csv <outdir>/results_v2/check.csv
+halo3d cuda (cuda-aware) | nodes 2 | ranks 4 = 1x2x2 | threads/rank 4 | global 17x17x17 | local(rank 0) 17x9x9 | steps 50
+time 0.0137 s (0.275 ms/step) | halo wait 0.0067 s | interior 0.0005 s | 0.018 GLUP/s | 0.3 GB/s at 16 B/LUP | interior kernel 1.8 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.767e-15 (PASS, tol 1e-09) | vs continuous PDE 1.824e-03
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 4 --map-by ppr:2:node -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend cuda --n 64 --steps 50 --csv <outdir>/results_v2/check.csv
+halo3d cuda | nodes 2 | ranks 4 = 1x2x2 | threads/rank 4 | global 64x64x64 | local(rank 0) 64x32x32 | steps 50
+time 0.0041 s (0.082 ms/step) | halo wait 0.0008 s | interior 0.0013 s | 3.207 GLUP/s | 51.3 GB/s at 16 B/LUP | interior kernel 36.8 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 6.336e-15 (PASS, tol 1e-09) | vs continuous PDE 1.066e-05
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 4 --map-by ppr:2:node -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend cuda --n 64 --steps 50 --cuda-aware --csv <outdir>/results_v2/check.csv
+halo3d cuda (cuda-aware) | nodes 2 | ranks 4 = 1x2x2 | threads/rank 4 | global 64x64x64 | local(rank 0) 64x32x32 | steps 50
+time 0.0447 s (0.894 ms/step) | halo wait 0.0376 s | interior 0.0013 s | 0.293 GLUP/s | 4.7 GB/s at 16 B/LUP | interior kernel 36.8 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 6.336e-15 (PASS, tol 1e-09) | vs continuous PDE 1.066e-05
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 4 --map-by ppr:2:node -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend cuda --local 40 --steps 40 --csv <outdir>/results_v2/check.csv
+halo3d cuda | nodes 2 | ranks 4 = 1x2x2 | threads/rank 4 | global 40x80x80 | local(rank 0) 40x40x40 | steps 40
+time 0.0032 s (0.081 ms/step) | halo wait 0.0007 s | interior 0.0011 s | 3.173 GLUP/s | 50.8 GB/s at 16 B/LUP | interior kernel 36.5 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 4.491e-16 (PASS, tol 1e-09) | vs continuous PDE 8.395e-06
+### rc=0
+### mpirun --bind-to none --oversubscribe -np 4 --map-by ppr:2:node -x OMP_NUM_THREADS ./bin/halo3d_cuda --backend omp --local 40 --steps 40 --csv <outdir>/results_v2/check.csv
+halo3d omp | nodes 2 | ranks 4 = 1x2x2 | threads/rank 4 | global 40x80x80 | local(rank 0) 40x40x40 | steps 40
+time 0.0030 s (0.074 ms/step) | halo wait 0.0007 s | interior 0.0008 s | 3.452 GLUP/s | 55.2 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 4.491e-16 (PASS, tol 1e-09) | vs continuous PDE 8.395e-06
+### rc=0
+### summary: 24 passed, 0 failed

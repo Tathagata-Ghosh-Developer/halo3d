@@ -1,0 +1,5 @@
+OMP_NUM_THREADS=2 mpirun -np 2 ./bin/halo3d_omp --backend omp --n 16 --steps 50
+halo3d omp | nodes 1 | ranks 2 = 1x1x2 | threads/rank 2 | global 16x16x16 | local(rank 0) 16x16x8 | steps 50
+time 0.0020 s (0.039 ms/step) | halo wait 0.0001 s | interior 0.0003 s | 0.105 GLUP/s | 1.7 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 4.418e-15 (PASS, tol 1e-09) | vs continuous PDE 2.294e-03
+make-check-exit=0

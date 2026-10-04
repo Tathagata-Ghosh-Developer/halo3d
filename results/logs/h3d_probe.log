@@ -1,0 +1,87 @@
+gpunode05
+Sun Oct  4 22:45:24 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 590.48.01              Driver Version: 590.48.01      CUDA Version: 13.1     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100 80GB PCIe          Off |   00000000:3B:00.0 Off |                    0 |
+| N/A   57C    P0             77W /  300W |       0MiB /  81920MiB |      1%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100 80GB PCIe          Off |   00000000:5E:00.0 Off |                    0 |
+| N/A   55C    P0             77W /  300W |       0MiB /  81920MiB |      1%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+	[4mGPU0	GPU1	NIC0	CPU Affinity	NUMA Affinity	GPU NUMA ID[0m
+GPU0	 X 	NODE	SYS	0-23	0		N/A
+GPU1	NODE	 X 	SYS	0-23	0		N/A
+NIC0	SYS	SYS	 X 				
+
+Legend:
+
+  X    = Self
+  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)
+  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node
+  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)
+  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)
+  PIX  = Connection traversing at most a single PCIe bridge
+  NV#  = Connection traversing a bonded set of # NVLinks
+
+NIC Legend:
+
+  NIC0: mlx5_0
+
+    Product Name                                       : NVIDIA A100 80GB PCIe
+    Max Clocks
+    Product Name                                       : NVIDIA A100 80GB PCIe
+    Max Clocks
+Model name:                           Intel(R) Xeon(R) Gold 6240R CPU @ 2.40GHz
+Socket(s):                            2
+Flags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 
+NUMA node0 CPU(s):                    0-23
+NUMA node1 CPU(s):                    24-47
+	CA type: MT4123
+		State: Active
+		Rate: 100
+		Link layer: InfiniBand
+hca_id:	mlx5_0
+			link_layer:		InfiniBand
+# Library version: 1.18.0
+# Library path: /lib64/libucs.so.0
+# API headers version: 1.18.0
+#         Device: cuda
+#         Device: eth2
+#         Device: ib0
+#         Device: lo
+#         Device: memory
+#         Device: mlx5_0:1
+#      Transport: cma
+#      Transport: cuda_copy
+#      Transport: cuda_ipc
+#      Transport: dc_mlx5
+#      Transport: knem
+#      Transport: posix
+#      Transport: rc_mlx5
+#      Transport: rc_verbs
+#      Transport: self
+#      Transport: sysv
+#      Transport: tcp
+#      Transport: ud_mlx5
+#      Transport: ud_verbs
+#      Transport: xpmem
+OSU=
+examples
+imb
+osu-micro-benchmarks
+osu-micro-benchmarks-cuda

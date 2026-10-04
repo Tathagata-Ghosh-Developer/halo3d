@@ -1,0 +1,94 @@
+halo3d omp | nodes 1 | ranks 2 = 1x1x2 | threads/rank 24 | global 1024x1024x1024 | local(rank 0) 1024x1024x512 | steps 100
+time 19.9421 s (199.421 ms/step) | halo wait 0.1623 s | interior 19.7264 s | 5.384 GLUP/s | 86.1 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 1.063e-14 (PASS, tol 1e-09) | vs continuous PDE 3.447e-10
+halo3d omp | nodes 1 | ranks 2 = 1x1x2 | threads/rank 24 | global 512x512x1024 | local(rank 0) 512x512x512 | steps 100
+time 4.8964 s (48.964 ms/step) | halo wait 0.0469 s | interior 4.8311 s | 5.482 GLUP/s | 87.7 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 5.624e-15 (PASS, tol 1e-09) | vs continuous PDE 2.543e-09
+halo3d omp | nodes 1 | ranks 2 = 1x1x2 | threads/rank 24 | global 1024x1024x1024 | local(rank 0) 1024x1024x512 | steps 100
+time 19.9919 s (199.919 ms/step) | halo wait 0.2201 s | interior 19.7641 s | 5.371 GLUP/s | 85.9 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 1.063e-14 (PASS, tol 1e-09) | vs continuous PDE 3.447e-10
+halo3d omp | nodes 1 | ranks 2 = 1x1x2 | threads/rank 24 | global 512x512x1024 | local(rank 0) 512x512x512 | steps 100
+time 4.9660 s (49.660 ms/step) | halo wait 0.0752 s | interior 4.8660 s | 5.405 GLUP/s | 86.5 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 5.624e-15 (PASS, tol 1e-09) | vs continuous PDE 2.543e-09
+halo3d omp | nodes 1 | ranks 2 = 1x1x2 | threads/rank 24 | global 1024x1024x1024 | local(rank 0) 1024x1024x512 | steps 100
+time 19.9532 s (199.532 ms/step) | halo wait 0.1632 s | interior 19.7306 s | 5.381 GLUP/s | 86.1 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 1.063e-14 (PASS, tol 1e-09) | vs continuous PDE 3.447e-10
+halo3d omp | nodes 1 | ranks 2 = 1x1x2 | threads/rank 24 | global 512x512x1024 | local(rank 0) 512x512x512 | steps 100
+time 4.9028 s (49.028 ms/step) | halo wait 0.0503 s | interior 4.8375 s | 5.475 GLUP/s | 87.6 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 5.624e-15 (PASS, tol 1e-09) | vs continuous PDE 2.543e-09
+[cpunode02:1169049] MCW rank 0 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]], socket 0[core 12[hwt 0]], socket 0[core 13[hwt 0]], socket 0[core 14[hwt 0]], socket 0[core 15[hwt 0]], socket 0[core 16[hwt 0]], socket 0[core 17[hwt 0]], socket 0[core 18[hwt 0]], socket 0[core 19[hwt 0]], socket 0[core 20[hwt 0]], socket 0[core 21[hwt 0]], socket 0[core 22[hwt 0]], socket 0[core 23[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././././././././././././././.]
+[cpunode02:1169049] MCW rank 1 bound to socket 1[core 24[hwt 0]], socket 1[core 25[hwt 0]], socket 1[core 26[hwt 0]], socket 1[core 27[hwt 0]], socket 1[core 28[hwt 0]], socket 1[core 29[hwt 0]], socket 1[core 30[hwt 0]], socket 1[core 31[hwt 0]], socket 1[core 32[hwt 0]], socket 1[core 33[hwt 0]], socket 1[core 34[hwt 0]], socket 1[core 35[hwt 0]], socket 1[core 36[hwt 0]], socket 1[core 37[hwt 0]], socket 1[core 38[hwt 0]], socket 1[core 39[hwt 0]], socket 1[core 40[hwt 0]], socket 1[core 41[hwt 0]], socket 1[core 42[hwt 0]], socket 1[core 43[hwt 0]], socket 1[core 44[hwt 0]], socket 1[core 45[hwt 0]], socket 1[core 46[hwt 0]], socket 1[core 47[hwt 0]]: [./././././././././././././././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B]
+[cpunode03:974106] MCW rank 2 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]], socket 0[core 12[hwt 0]], socket 0[core 13[hwt 0]], socket 0[core 14[hwt 0]], socket 0[core 15[hwt 0]], socket 0[core 16[hwt 0]], socket 0[core 17[hwt 0]], socket 0[core 18[hwt 0]], socket 0[core 19[hwt 0]], socket 0[core 20[hwt 0]], socket 0[core 21[hwt 0]], socket 0[core 22[hwt 0]], socket 0[core 23[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././././././././././././././.]
+[cpunode03:974106] MCW rank 3 bound to socket 1[core 24[hwt 0]], socket 1[core 25[hwt 0]], socket 1[core 26[hwt 0]], socket 1[core 27[hwt 0]], socket 1[core 28[hwt 0]], socket 1[core 29[hwt 0]], socket 1[core 30[hwt 0]], socket 1[core 31[hwt 0]], socket 1[core 32[hwt 0]], socket 1[core 33[hwt 0]], socket 1[core 34[hwt 0]], socket 1[core 35[hwt 0]], socket 1[core 36[hwt 0]], socket 1[core 37[hwt 0]], socket 1[core 38[hwt 0]], socket 1[core 39[hwt 0]], socket 1[core 40[hwt 0]], socket 1[core 41[hwt 0]], socket 1[core 42[hwt 0]], socket 1[core 43[hwt 0]], socket 1[core 44[hwt 0]], socket 1[core 45[hwt 0]], socket 1[core 46[hwt 0]], socket 1[core 47[hwt 0]]: [./././././././././././././././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B/B]
+halo3d omp | nodes 2 | ranks 4 = 1x2x2 | threads/rank 24 | global 1024x1024x1024 | local(rank 0) 1024x512x512 | steps 100
+time 9.9114 s (99.114 ms/step) | halo wait 0.1514 s | interior 9.7544 s | 10.833 GLUP/s | 173.3 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 1.063e-14 (PASS, tol 1e-09) | vs continuous PDE 3.447e-10
+halo3d omp | nodes 2 | ranks 4 = 1x2x2 | threads/rank 24 | global 512x1024x1024 | local(rank 0) 512x512x512 | steps 100
+time 4.9204 s (49.204 ms/step) | halo wait 0.0846 s | interior 4.8381 s | 10.911 GLUP/s | 174.6 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 8.112e-15 (PASS, tol 1e-09) | vs continuous PDE 8.266e-10
+halo3d omp | nodes 2 | ranks 4 = 1x2x2 | threads/rank 24 | global 1024x1024x1024 | local(rank 0) 1024x512x512 | steps 100
+time 9.9707 s (99.707 ms/step) | halo wait 0.1647 s | interior 9.7790 s | 10.769 GLUP/s | 172.3 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 1.063e-14 (PASS, tol 1e-09) | vs continuous PDE 3.447e-10
+halo3d omp | nodes 2 | ranks 4 = 1x2x2 | threads/rank 24 | global 512x1024x1024 | local(rank 0) 512x512x512 | steps 100
+time 4.9171 s (49.171 ms/step) | halo wait 0.0771 s | interior 4.8363 s | 10.918 GLUP/s | 174.7 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 8.112e-15 (PASS, tol 1e-09) | vs continuous PDE 8.266e-10
+halo3d omp | nodes 2 | ranks 4 = 1x2x2 | threads/rank 24 | global 1024x1024x1024 | local(rank 0) 1024x512x512 | steps 100
+time 10.0040 s (100.040 ms/step) | halo wait 0.1780 s | interior 9.7903 s | 10.733 GLUP/s | 171.7 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 1.063e-14 (PASS, tol 1e-09) | vs continuous PDE 3.447e-10
+halo3d omp | nodes 2 | ranks 4 = 1x2x2 | threads/rank 24 | global 512x1024x1024 | local(rank 0) 512x512x512 | steps 100
+time 4.9394 s (49.394 ms/step) | halo wait 0.0933 s | interior 4.8435 s | 10.869 GLUP/s | 173.9 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 8.112e-15 (PASS, tol 1e-09) | vs continuous PDE 8.266e-10
+halo3d omp | nodes 4 | ranks 8 = 2x2x2 | threads/rank 24 | global 1024x1024x1024 | local(rank 0) 512x512x512 | steps 100
+time 5.1054 s (51.054 ms/step) | halo wait 0.1390 s | interior 4.8532 s | 21.032 GLUP/s | 336.5 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 1.063e-14 (PASS, tol 1e-09) | vs continuous PDE 3.447e-10
+halo3d omp | nodes 4 | ranks 8 = 2x2x2 | threads/rank 24 | global 1024x1024x1024 | local(rank 0) 512x512x512 | steps 100
+time 5.1764 s (51.764 ms/step) | halo wait 0.1733 s | interior 4.8657 s | 20.743 GLUP/s | 331.9 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 1.063e-14 (PASS, tol 1e-09) | vs continuous PDE 3.447e-10
+halo3d omp | nodes 4 | ranks 8 = 2x2x2 | threads/rank 24 | global 1024x1024x1024 | local(rank 0) 512x512x512 | steps 100
+time 5.1126 s (51.126 ms/step) | halo wait 0.1382 s | interior 4.8519 s | 21.002 GLUP/s | 336.0 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 1.063e-14 (PASS, tol 1e-09) | vs continuous PDE 3.447e-10
+halo3d omp | nodes 4 | ranks 8 = 2x2x2 | threads/rank 24 | global 1024x1024x1024 | local(rank 0) 512x512x512 | steps 100
+time 5.1133 s (51.133 ms/step) | halo wait 0.1384 s | interior 4.8552 s | 20.999 GLUP/s | 336.0 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 1.063e-14 (PASS, tol 1e-09) | vs continuous PDE 3.447e-10
+halo3d omp | nodes 4 | ranks 8 = 2x2x2 | threads/rank 24 | global 1024x1024x1024 | local(rank 0) 512x512x512 | steps 100
+time 5.1056 s (51.056 ms/step) | halo wait 0.1356 s | interior 4.8553 s | 21.031 GLUP/s | 336.5 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 1.063e-14 (PASS, tol 1e-09) | vs continuous PDE 3.447e-10
+halo3d omp | nodes 4 | ranks 8 = 2x2x2 | threads/rank 24 | global 1024x1024x1024 | local(rank 0) 512x512x512 | steps 100
+time 5.1053 s (51.053 ms/step) | halo wait 0.1345 s | interior 4.8518 s | 21.032 GLUP/s | 336.5 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 1.063e-14 (PASS, tol 1e-09) | vs continuous PDE 3.447e-10
+halo3d omp | nodes 8 | ranks 16 = 2x2x4 | threads/rank 24 | global 1024x1024x1024 | local(rank 0) 512x512x256 | steps 100
+time 2.5937 s (25.937 ms/step) | halo wait 0.1151 s | interior 2.4260 s | 41.398 GLUP/s | 662.4 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 1.063e-14 (PASS, tol 1e-09) | vs continuous PDE 3.447e-10
+halo3d omp | nodes 8 | ranks 16 = 2x2x4 | threads/rank 24 | global 1024x1024x2048 | local(rank 0) 512x512x512 | steps 100
+time 5.2953 s (52.953 ms/step) | halo wait 0.2581 s | interior 4.8880 s | 40.555 GLUP/s | 648.9 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 2.643e-15 (PASS, tol 1e-09) | vs continuous PDE 1.595e-10
+halo3d omp | nodes 8 | ranks 16 = 2x2x4 | threads/rank 24 | global 1024x1024x1024 | local(rank 0) 512x512x256 | steps 100
+time 2.5947 s (25.947 ms/step) | halo wait 0.1116 s | interior 2.4247 s | 41.382 GLUP/s | 662.1 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 1.063e-14 (PASS, tol 1e-09) | vs continuous PDE 3.447e-10
+halo3d omp | nodes 8 | ranks 16 = 2x2x4 | threads/rank 24 | global 1024x1024x2048 | local(rank 0) 512x512x512 | steps 100
+time 5.3102 s (53.102 ms/step) | halo wait 0.3478 s | interior 4.8661 s | 40.441 GLUP/s | 647.1 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 2.643e-15 (PASS, tol 1e-09) | vs continuous PDE 1.595e-10
+halo3d omp | nodes 8 | ranks 16 = 2x2x4 | threads/rank 24 | global 1024x1024x1024 | local(rank 0) 512x512x256 | steps 100
+time 2.6433 s (26.433 ms/step) | halo wait 0.1580 s | interior 2.4237 s | 40.621 GLUP/s | 649.9 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 1.063e-14 (PASS, tol 1e-09) | vs continuous PDE 3.447e-10
+halo3d omp | nodes 8 | ranks 16 = 2x2x4 | threads/rank 24 | global 1024x1024x2048 | local(rank 0) 512x512x512 | steps 100
+time 5.1309 s (51.309 ms/step) | halo wait 0.1707 s | interior 4.8412 s | 41.854 GLUP/s | 669.7 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 2.643e-15 (PASS, tol 1e-09) | vs continuous PDE 1.595e-10
+halo3d omp | nodes 16 | ranks 32 = 2x4x4 | threads/rank 24 | global 1024x1024x1024 | local(rank 0) 512x256x256 | steps 100
+time 1.3692 s (13.692 ms/step) | halo wait 0.1431 s | interior 1.1876 s | 78.421 GLUP/s | 1254.7 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 1.063e-14 (PASS, tol 1e-09) | vs continuous PDE 3.447e-10
+halo3d omp | nodes 16 | ranks 32 = 2x4x4 | threads/rank 24 | global 1024x2048x2048 | local(rank 0) 512x512x512 | steps 100
+time 5.1961 s (51.961 ms/step) | halo wait 0.2336 s | interior 4.8417 s | 82.658 GLUP/s | 1322.5 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 5.380e-15 (PASS, tol 1e-09) | vs continuous PDE 5.179e-11
+halo3d omp | nodes 16 | ranks 32 = 2x4x4 | threads/rank 24 | global 1024x1024x1024 | local(rank 0) 512x256x256 | steps 100
+time 1.3137 s (13.137 ms/step) | halo wait 0.0884 s | interior 1.1868 s | 81.733 GLUP/s | 1307.7 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 1.063e-14 (PASS, tol 1e-09) | vs continuous PDE 3.447e-10
+halo3d omp | nodes 16 | ranks 32 = 2x4x4 | threads/rank 24 | global 1024x2048x2048 | local(rank 0) 512x512x512 | steps 100
+time 5.2149 s (52.149 ms/step) | halo wait 0.2516 s | interior 4.8507 s | 82.360 GLUP/s | 1317.8 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 5.380e-15 (PASS, tol 1e-09) | vs continuous PDE 5.179e-11
+halo3d omp | nodes 16 | ranks 32 = 2x4x4 | threads/rank 24 | global 1024x1024x1024 | local(rank 0) 512x256x256 | steps 100
+time 1.3127 s (13.127 ms/step) | halo wait 0.0895 s | interior 1.1876 s | 81.797 GLUP/s | 1308.8 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 1.063e-14 (PASS, tol 1e-09) | vs continuous PDE 3.447e-10
+halo3d omp | nodes 16 | ranks 32 = 2x4x4 | threads/rank 24 | global 1024x2048x2048 | local(rank 0) 512x512x512 | steps 100
+time 5.2021 s (52.021 ms/step) | halo wait 0.2369 s | interior 4.8599 s | 82.562 GLUP/s | 1321.0 GB/s at 16 B/LUP
+rel. L2 error vs exact discrete solution 5.380e-15 (PASS, tol 1e-09) | vs continuous PDE 5.179e-11

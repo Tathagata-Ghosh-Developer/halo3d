@@ -1,0 +1,255 @@
+Collecting data...
+Collecting data...
+Collecting data...
+Collecting data...
+halo3d cuda | nodes 2 | ranks 4 = 1x2x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 1024x512x512 | steps 20
+time 0.0663 s (3.314 ms/step) | halo wait 0.0185 s | interior 0.0652 s | 324.044 GLUP/s | 5184.7 GB/s at 16 B/LUP | interior kernel 1311.4 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.162e-15 (PASS, tol 1e-09) | vs continuous PDE 6.894e-11
+Generating '/tmp/nsys-report-5664.qdstrm'
+Generating '/tmp/nsys-report-fab2.qdstrm'
+Generating '/tmp/nsys-report-2021.qdstrm'
+Generating '/tmp/nsys-report-cfa9.qdstrm'
+
+[1/1] [0%                          ] v2_rank0.nsys-rep
+[1/1] [0%                          ] v2_rank1.nsys-rep
+[1/1] [0%                          ] v2_rank3.nsys-rep
+[1/1] [0%                          ] v2_rank2.nsys-rep
+[1/1] [0%                          ] v2_rank3.nsys-rep
+[1/1] [0%                          ] v2_rank2.nsys-rep
+[1/1] [0%                          ] v2_rank0.nsys-rep
+[1/1] [0%                          ] v2_rank1.nsys-rep
+[1/1] [=======38%                  ] v2_rank1.nsys-rep
+[1/1] [=======38%                  ] v2_rank0.nsys-rep
+[1/1] [=======38%                  ] v2_rank2.nsys-rep
+[1/1] [=======38%                  ] v2_rank3.nsys-rep
+[1/1] [==========47%               ] v2_rank1.nsys-rep
+[1/1] [==========47%               ] v2_rank0.nsys-rep
+[1/1] [==========47%               ] v2_rank2.nsys-rep
+[1/1] [==========47%               ] v2_rank3.nsys-rep
+[1/1] [==========48%               ] v2_rank3.nsys-rep
+[1/1] [===========53%              ] v2_rank3.nsys-rep
+[1/1] [==========48%               ] v2_rank2.nsys-rep
+[1/1] [===========53%              ] v2_rank2.nsys-rep
+[1/1] [==========48%               ] v2_rank0.nsys-rep
+[1/1] [===========53%              ] v2_rank0.nsys-rep
+[1/1] [============57%             ] v2_rank3.nsys-rep
+[1/1] [==========48%               ] v2_rank1.nsys-rep
+[1/1] [===========53%              ] v2_rank1.nsys-rep
+[1/1] [============57%             ] v2_rank2.nsys-rep
+[1/1] [=============58%            ] v2_rank0.nsys-rep
+[1/1] [=============58%            ] v2_rank1.nsys-rep
+[1/1] [=============58%            ] v2_rank2.nsys-rep
+[1/1] [=============58%            ] v2_rank3.nsys-rep
+[1/1] [=============59%            ] v2_rank0.nsys-rep
+[1/1] [=============59%            ] v2_rank1.nsys-rep
+[1/1] [=============60%            ] v2_rank0.nsys-rep
+[1/1] [=============60%            ] v2_rank1.nsys-rep
+[1/1] [=============59%            ] v2_rank3.nsys-rep
+[1/1] [=============59%            ] v2_rank2.nsys-rep
+[1/1] [=============60%            ] v2_rank3.nsys-rep
+[1/1] [=============60%            ] v2_rank2.nsys-rep
+[1/1] [==============62%           ] v2_rank0.nsys-rep
+[1/1] [==============62%           ] v2_rank1.nsys-rep
+[1/1] [==============62%           ] v2_rank2.nsys-rep
+[1/1] [==============62%           ] v2_rank3.nsys-rep
+[1/1] [==============63%           ] v2_rank0.nsys-rep
+[1/1] [==============63%           ] v2_rank1.nsys-rep
+[1/1] [==============63%           ] v2_rank2.nsys-rep
+[1/1] [==============64%           ] v2_rank1.nsys-rep
+[1/1] [==============64%           ] v2_rank0.nsys-rep
+[1/1] [==============63%           ] v2_rank3.nsys-rep
+[1/1] [==============64%           ] v2_rank2.nsys-rep
+[1/1] [===============65%          ] v2_rank0.nsys-rep
+[1/1] [===============65%          ] v2_rank1.nsys-rep
+[1/1] [==============64%           ] v2_rank3.nsys-rep
+[1/1] [===============65%          ] v2_rank2.nsys-rep
+[1/1] [===============66%          ] v2_rank0.nsys-rep
+[1/1] [===============66%          ] v2_rank1.nsys-rep
+[1/1] [===============67%          ] v2_rank1.nsys-rep
+[1/1] [===============66%          ] v2_rank3.nsys-rep
+[1/1] [===============67%          ] v2_rank3.nsys-rep
+[1/1] [===============67%          ] v2_rank0.nsys-rep
+[1/1] [===============66%          ] v2_rank2.nsys-rep
+[1/1] [================68%         ] v2_rank0.nsys-rep
+[1/1] [================68%         ] v2_rank1.nsys-rep
+[1/1] [================68%         ] v2_rank2.nsys-rep
+[1/1] [================69%         ] v2_rank2.nsys-rep
+[1/1] [================69%         ] v2_rank0.nsys-rep
+[1/1] [================69%         ] v2_rank1.nsys-rep
+[1/1] [================68%         ] v2_rank3.nsys-rep
+[1/1] [=================72%        ] v2_rank1.nsys-rep
+[1/1] [=================73%        ] v2_rank2.nsys-rep
+[1/1] [=================73%        ] v2_rank0.nsys-rep
+[1/1] [=================73%        ] v2_rank3.nsys-rep
+[1/1] [=================73%        ] v2_rank1.nsys-rep
+[1/1] [=================74%        ] v2_rank2.nsys-rep
+[1/1] [=================74%        ] v2_rank0.nsys-rep
+[1/1] [=================74%        ] v2_rank1.nsys-rep
+[1/1] [==================75%       ] v2_rank2.nsys-rep
+[1/1] [=================74%        ] v2_rank3.nsys-rep
+[1/1] [==================77%       ] v2_rank0.nsys-rep
+[1/1] [==================77%       ] v2_rank3.nsys-rep
+[1/1] [==================77%       ] v2_rank1.nsys-rep
+[1/1] [==================78%       ] v2_rank0.nsys-rep
+[1/1] [==================78%       ] v2_rank1.nsys-rep
+[1/1] [==================78%       ] v2_rank2.nsys-rep
+[1/1] [==================78%       ] v2_rank3.nsys-rep
+[1/1] [===================82%      ] v2_rank0.nsys-rep
+[1/1] [===================82%      ] v2_rank1.nsys-rep
+[1/1] [===================82%      ] v2_rank2.nsys-rep
+[1/1] [===================82%      ] v2_rank3.nsys-rep
+[1/1] [========================97% ] v2_rank1.nsys-rep
+[1/1] [========================100%] v2_rank1.nsys-rep
+[1/1] [========================97% ] v2_rank0.nsys-rep
+[1/1] [========================100%] v2_rank0.nsys-rep
+[1/1] [========================97% ] v2_rank3.nsys-rep
+[1/1] [========================100%] v2_rank3.nsys-rep
+[1/1] [========================97% ] v2_rank2.nsys-rep
+[1/1] [========================100%] v2_rank2.nsys-rep
+[1/1] [========================100%] v2_rank1.nsys-rep
+Generated:
+	<outdir>/results_v2/nsys/v2_rank1.nsys-rep
+
+[1/1] [========================100%] v2_rank2.nsys-rep
+Generated:
+	<outdir>/results_v2/nsys/v2_rank2.nsys-rep
+
+[1/1] [========================100%] v2_rank0.nsys-rep
+Generated:
+	<outdir>/results_v2/nsys/v2_rank0.nsys-rep
+
+[1/1] [========================100%] v2_rank3.nsys-rep
+Generated:
+	<outdir>/results_v2/nsys/v2_rank3.nsys-rep
+Generating SQLite file <outdir>/results_v2/nsys/v2_rank0.sqlite from <outdir>/results_v2/nsys/v2_rank0.nsys-rep
+Processing [<outdir>/results_v2/nsys/v2_rank0.sqlite] with [<nvhpc>/Linux_x86_64/25.11/profilers/13.0/Nsight_Systems/host-linux-x64/reports/cuda_gpu_trace.py] to [<outdir>/results_v2/nsys/v2_rank0_cuda_gpu_trace.csv]... PROCESSED
+
+Generating SQLite file <outdir>/results_v2/nsys/v2_rank1.sqlite from <outdir>/results_v2/nsys/v2_rank1.nsys-rep
+Processing [<outdir>/results_v2/nsys/v2_rank1.sqlite] with [<nvhpc>/Linux_x86_64/25.11/profilers/13.0/Nsight_Systems/host-linux-x64/reports/cuda_gpu_trace.py] to [<outdir>/results_v2/nsys/v2_rank1_cuda_gpu_trace.csv]... PROCESSED
+
+Collecting data...
+Collecting data...
+Collecting data...
+Collecting data...
+halo3d cuda | nodes 2 | ranks 4 = 1x2x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 1024x512x512 | steps 20
+time 0.1021 s (5.105 ms/step) | halo wait 0.0174 s | interior 0.0640 s | 210.338 GLUP/s | 3365.4 GB/s at 16 B/LUP | interior kernel 1336.9 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.162e-15 (PASS, tol 1e-09) | vs continuous PDE 6.894e-11
+Generating '/tmp/nsys-report-6122.qdstrm'
+Generating '/tmp/nsys-report-4282.qdstrm'
+Generating '/tmp/nsys-report-c1c4.qdstrm'
+Generating '/tmp/nsys-report-6eac.qdstrm'
+
+[1/1] [0%                          ] v1_rank2.nsys-rep
+[1/1] [0%                          ] v1_rank3.nsys-rep
+[1/1] [0%                          ] v1_rank1.nsys-rep
+[1/1] [0%                          ] v1_rank2.nsys-rep
+[1/1] [11%                         ] v1_rank2.nsys-rep
+[1/1] [12%                         ] v1_rank2.nsys-rep
+[1/1] [==========48%               ] v1_rank2.nsys-rep
+[1/1] [============54%             ] v1_rank2.nsys-rep
+[1/1] [=============59%            ] v1_rank2.nsys-rep
+[1/1] [=============60%            ] v1_rank2.nsys-rep
+[1/1] [==============61%           ] v1_rank2.nsys-rep
+[1/1] [==============62%           ] v1_rank2.nsys-rep
+[1/1] [==============63%           ] v1_rank2.nsys-rep
+[1/1] [===============65%          ] v1_rank2.nsys-rep
+[1/1] [0%                          ] v1_rank0.nsys-rep
+[1/1] [0%                          ] v1_rank3.nsys-rep
+[1/1] [11%                         ] v1_rank3.nsys-rep
+[1/1] [12%                         ] v1_rank3.nsys-rep
+[1/1] [==========48%               ] v1_rank3.nsys-rep
+[1/1] [============54%             ] v1_rank3.nsys-rep
+[1/1] [=============59%            ] v1_rank3.nsys-rep
+[1/1] [================69%         ] v1_rank2.nsys-rep
+[1/1] [================70%         ] v1_rank2.nsys-rep
+[1/1] [=================73%        ] v1_rank2.nsys-rep
+[1/1] [0%                          ] v1_rank1.nsys-rep
+[1/1] [=============60%            ] v1_rank3.nsys-rep
+[1/1] [6%                          ] v1_rank1.nsys-rep
+[1/1] [=================74%        ] v1_rank2.nsys-rep
+[1/1] [==========48%               ] v1_rank1.nsys-rep
+[1/1] [===========52%              ] v1_rank1.nsys-rep
+[1/1] [============55%             ] v1_rank1.nsys-rep
+[1/1] [===================79%      ] v1_rank2.nsys-rep
+[1/1] [========================97% ] v1_rank2.nsys-rep
+[1/1] [========================100%] v1_rank2.nsys-rep
+[1/1] [==============61%           ] v1_rank3.nsys-rep
+[1/1] [========================100%] v1_rank2.nsys-rep
+Generated:
+	<outdir>/results_v2/nsys/v1_rank2.nsys-rep
+
+[1/1] [==============62%           ] v1_rank3.nsys-rep
+[1/1] [============56%             ] v1_rank1.nsys-rep
+[1/1] [==============63%           ] v1_rank3.nsys-rep
+[1/1] [===============65%          ] v1_rank3.nsys-rep
+[1/1] [===============66%          ] v1_rank3.nsys-rep
+[1/1] [============57%             ] v1_rank1.nsys-rep
+[1/1] [================69%         ] v1_rank3.nsys-rep
+[1/1] [=============58%            ] v1_rank1.nsys-rep
+[1/1] [=============59%            ] v1_rank1.nsys-rep
+[1/1] [================69%         ] v1_rank1.nsys-rep
+[1/1] [================70%         ] v1_rank3.nsys-rep
+[1/1] [===================80%      ] v1_rank1.nsys-rep
+[1/1] [=================73%        ] v1_rank3.nsys-rep
+[1/1] [=================74%        ] v1_rank3.nsys-rep
+[1/1] [0%                          ] v1_rank0.nsys-rep
+[1/1] [6%                          ] v1_rank0.nsys-rep
+[1/1] [===================79%      ] v1_rank3.nsys-rep
+[1/1] [====================83%     ] v1_rank1.nsys-rep
+[1/1] [========================97% ] v1_rank3.nsys-rep
+[1/1] [========================100%] v1_rank3.nsys-rep
+[1/1] [==========48%               ] v1_rank0.nsys-rep
+[1/1] [===========52%              ] v1_rank0.nsys-rep
+[1/1] [============55%             ] v1_rank0.nsys-rep
+[1/1] [====================85%     ] v1_rank1.nsys-rep
+[1/1] [=====================86%    ] v1_rank1.nsys-rep
+[1/1] [=====================88%    ] v1_rank1.nsys-rep
+[1/1] [========================98% ] v1_rank1.nsys-rep
+[1/1] [========================100%] v1_rank1.nsys-rep
+[1/1] [========================100%] v1_rank3.nsys-rep
+Generated:
+	<outdir>/results_v2/nsys/v1_rank3.nsys-rep
+
+[1/1] [============56%             ] v1_rank0.nsys-rep
+[1/1] [========================100%] v1_rank1.nsys-rep
+Generated:
+	<outdir>/results_v2/nsys/v1_rank1.nsys-rep
+
+[1/1] [============57%             ] v1_rank0.nsys-rep
+[1/1] [=============58%            ] v1_rank0.nsys-rep
+[1/1] [=============59%            ] v1_rank0.nsys-rep
+[1/1] [================69%         ] v1_rank0.nsys-rep
+[1/1] [===================80%      ] v1_rank0.nsys-rep
+[1/1] [====================83%     ] v1_rank0.nsys-rep
+[1/1] [====================85%     ] v1_rank0.nsys-rep
+[1/1] [=====================88%    ] v1_rank0.nsys-rep
+[1/1] [========================98% ] v1_rank0.nsys-rep
+[1/1] [========================100%] v1_rank0.nsys-rep
+[1/1] [========================100%] v1_rank0.nsys-rep
+Generated:
+	<outdir>/results_v2/nsys/v1_rank0.nsys-rep
+Generating SQLite file <outdir>/results_v2/nsys/v1_rank0.sqlite from <outdir>/results_v2/nsys/v1_rank0.nsys-rep
+Processing [<outdir>/results_v2/nsys/v1_rank0.sqlite] with [<nvhpc>/Linux_x86_64/25.11/profilers/13.0/Nsight_Systems/host-linux-x64/reports/cuda_gpu_trace.py] to [<outdir>/results_v2/nsys/v1_rank0_cuda_gpu_trace.csv]... PROCESSED
+
+Generating SQLite file <outdir>/results_v2/nsys/v1_rank1.sqlite from <outdir>/results_v2/nsys/v1_rank1.nsys-rep
+Processing [<outdir>/results_v2/nsys/v1_rank1.sqlite] with [<nvhpc>/Linux_x86_64/25.11/profilers/13.0/Nsight_Systems/host-linux-x64/reports/cuda_gpu_trace.py] to [<outdir>/results_v2/nsys/v1_rank1_cuda_gpu_trace.csv]... PROCESSED
+
+total 12510
+drwxr-xr-x 2 <redacted>.<redacted> <redacted>.<redacted>    4096 Oct  4 23:18 .
+drwxr-xr-x 3 <redacted>.<redacted> <redacted>.<redacted>    4096 Oct  4 23:17 ..
+-rw-rw-r-- 1 <redacted>.<redacted> <redacted>.<redacted>  470200 Oct  4 23:18 v1_rank0.nsys-rep
+-rw-r--r-- 1 <redacted>.<redacted> <redacted>.<redacted> 3002368 Oct  4 23:18 v1_rank0.sqlite
+-rw-r--r-- 1 <redacted>.<redacted> <redacted>.<redacted>   30101 Oct  4 23:18 v1_rank0_cuda_gpu_trace.csv
+-rw-rw-r-- 1 <redacted>.<redacted> <redacted>.<redacted>  468253 Oct  4 23:18 v1_rank1.nsys-rep
+-rw-r--r-- 1 <redacted>.<redacted> <redacted>.<redacted> 2998272 Oct  4 23:18 v1_rank1.sqlite
+-rw-r--r-- 1 <redacted>.<redacted> <redacted>.<redacted>   30100 Oct  4 23:18 v1_rank1_cuda_gpu_trace.csv
+-rw-rw-r-- 1 <redacted>.<redacted> <redacted>.<redacted>  406136 Oct  4 23:18 v1_rank2.nsys-rep
+-rw-rw-r-- 1 <redacted>.<redacted> <redacted>.<redacted>  409080 Oct  4 23:18 v1_rank3.nsys-rep
+-rw-rw-r-- 1 <redacted>.<redacted> <redacted>.<redacted>  404219 Oct  4 23:18 v2_rank0.nsys-rep
+-rw-r--r-- 1 <redacted>.<redacted> <redacted>.<redacted> 2777088 Oct  4 23:18 v2_rank0.sqlite
+-rw-r--r-- 1 <redacted>.<redacted> <redacted>.<redacted>   30125 Oct  4 23:18 v2_rank0_cuda_gpu_trace.csv
+-rw-rw-r-- 1 <redacted>.<redacted> <redacted>.<redacted>  403144 Oct  4 23:18 v2_rank1.nsys-rep
+-rw-r--r-- 1 <redacted>.<redacted> <redacted>.<redacted> 2789376 Oct  4 23:18 v2_rank1.sqlite
+-rw-r--r-- 1 <redacted>.<redacted> <redacted>.<redacted>   30123 Oct  4 23:18 v2_rank1_cuda_gpu_trace.csv
+-rw-rw-r-- 1 <redacted>.<redacted> <redacted>.<redacted>  432791 Oct  4 23:18 v2_rank2.nsys-rep
+-rw-rw-r-- 1 <redacted>.<redacted> <redacted>.<redacted>  436198 Oct  4 23:18 v2_rank3.nsys-rep

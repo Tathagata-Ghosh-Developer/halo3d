@@ -1,0 +1,244 @@
+name, memory.total [MiB], driver_version, pcie.link.gen.max, pcie.link.width.max
+NVIDIA A100 80GB PCIe, 81920 MiB, 590.48.01, 3, 16
+NVIDIA A100 80GB PCIe, 81920 MiB, 590.48.01, 3, 16
+## 1. GPU bandwidth
+bw_gpu NVIDIA A100 80GB PCIe | copy kernel 1653.3 GB/s | cudaMemcpy D2D 1714.8 GB/s (read + write counted) | pinned H2D 12.3 GB/s | pinned D2H 13.1 GB/s
+bw_gpu NVIDIA A100 80GB PCIe | copy kernel 1650.7 GB/s | cudaMemcpy D2D 1715.5 GB/s (read + write counted) | pinned H2D 12.3 GB/s | pinned D2H 13.1 GB/s
+## 2. OSU bandwidth (MB/s)
+# osu_bw H H, ppr:2:node (2:node = same node, 1:node = across InfiniBand)
+4096                 8235.87
+8192                15443.43
+16384               19286.78
+32768               21005.43
+65536               23552.57
+131072              24629.34
+262144              25141.26
+524288              25415.77
+1048576             18621.73
+2097152             12693.23
+4194304             12661.72
+8388608             12679.73
+# osu_bw D D, ppr:2:node (2:node = same node, 1:node = across InfiniBand)
+4096                  858.74
+8192                 1676.94
+16384                3594.13
+32768                6399.48
+65536                7891.79
+131072               8913.56
+262144               9547.79
+524288               9889.40
+1048576             10069.52
+2097152             10159.29
+4194304             10206.91
+8388608             10231.45
+# osu_bw H H, ppr:1:node (2:node = same node, 1:node = across InfiniBand)
+4096                 6568.48
+8192                 9228.37
+16384               10895.88
+32768               11567.01
+65536               11759.31
+131072              11979.20
+262144              12072.19
+524288              11988.41
+1048576             12031.36
+2097152             12095.53
+4194304             12100.24
+8388608             12067.22
+# osu_bw D D, ppr:1:node (2:node = same node, 1:node = across InfiniBand)
+4096                  861.96
+8192                 1712.35
+16384                2791.59
+32768                3883.02
+65536                3986.28
+131072               4032.90
+262144               4052.81
+524288               4067.82
+1048576              4083.46
+2097152              4091.43
+4194304              4095.95
+8388608              4098.02
+## 3. strong and weak scaling
+halo3d cuda | nodes 1 | ranks 1 = 1x1x1 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 1024x1024x1024 | steps 200
+time 2.6427 s (13.214 ms/step) | halo wait 0.0000 s | interior 2.6408 s | 81.261 GLUP/s | 1300.2 GB/s at 16 B/LUP | interior kernel 1301.1 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda | nodes 1 | ranks 1 = 1x1x1 | threads/rank 12 | global 512x512x512 | local(rank 0) 512x512x512 | steps 200
+time 0.3337 s (1.668 ms/step) | halo wait 0.0000 s | interior 0.3321 s | 80.451 GLUP/s | 1287.2 GB/s at 16 B/LUP | interior kernel 1293.2 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 6.054e-15 (PASS, tol 1e-09) | vs continuous PDE 1.099e-08
+halo3d cuda (cuda-aware) | nodes 1 | ranks 1 = 1x1x1 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 1024x1024x1024 | steps 200
+time 2.6429 s (13.214 ms/step) | halo wait 0.0000 s | interior 2.6413 s | 81.255 GLUP/s | 1300.1 GB/s at 16 B/LUP | interior kernel 1300.9 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda (cuda-aware) | nodes 1 | ranks 1 = 1x1x1 | threads/rank 12 | global 512x512x512 | local(rank 0) 512x512x512 | steps 200
+time 0.3335 s (1.667 ms/step) | halo wait 0.0000 s | interior 0.3319 s | 80.493 GLUP/s | 1287.9 GB/s at 16 B/LUP | interior kernel 1294.0 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 6.054e-15 (PASS, tol 1e-09) | vs continuous PDE 1.099e-08
+halo3d cuda | nodes 1 | ranks 1 = 1x1x1 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 1024x1024x1024 | steps 200
+time 2.6441 s (13.221 ms/step) | halo wait 0.0001 s | interior 2.6425 s | 81.217 GLUP/s | 1299.5 GB/s at 16 B/LUP | interior kernel 1300.3 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda | nodes 1 | ranks 1 = 1x1x1 | threads/rank 12 | global 512x512x512 | local(rank 0) 512x512x512 | steps 200
+time 0.3336 s (1.668 ms/step) | halo wait 0.0000 s | interior 0.3321 s | 80.464 GLUP/s | 1287.4 GB/s at 16 B/LUP | interior kernel 1293.5 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 6.054e-15 (PASS, tol 1e-09) | vs continuous PDE 1.099e-08
+halo3d cuda (cuda-aware) | nodes 1 | ranks 1 = 1x1x1 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 1024x1024x1024 | steps 200
+time 2.6430 s (13.215 ms/step) | halo wait 0.0000 s | interior 2.6413 s | 81.252 GLUP/s | 1300.0 GB/s at 16 B/LUP | interior kernel 1300.8 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda (cuda-aware) | nodes 1 | ranks 1 = 1x1x1 | threads/rank 12 | global 512x512x512 | local(rank 0) 512x512x512 | steps 200
+time 0.3331 s (1.666 ms/step) | halo wait 0.0000 s | interior 0.3314 s | 80.585 GLUP/s | 1289.4 GB/s at 16 B/LUP | interior kernel 1296.0 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 6.054e-15 (PASS, tol 1e-09) | vs continuous PDE 1.099e-08
+halo3d cuda | nodes 1 | ranks 1 = 1x1x1 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 1024x1024x1024 | steps 200
+time 2.6430 s (13.215 ms/step) | halo wait 0.0000 s | interior 2.6414 s | 81.251 GLUP/s | 1300.0 GB/s at 16 B/LUP | interior kernel 1300.8 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda | nodes 1 | ranks 1 = 1x1x1 | threads/rank 12 | global 512x512x512 | local(rank 0) 512x512x512 | steps 200
+time 0.3337 s (1.668 ms/step) | halo wait 0.0000 s | interior 0.3322 s | 80.443 GLUP/s | 1287.1 GB/s at 16 B/LUP | interior kernel 1293.0 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 6.054e-15 (PASS, tol 1e-09) | vs continuous PDE 1.099e-08
+halo3d cuda (cuda-aware) | nodes 1 | ranks 1 = 1x1x1 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 1024x1024x1024 | steps 200
+time 2.6430 s (13.215 ms/step) | halo wait 0.0001 s | interior 2.6414 s | 81.252 GLUP/s | 1300.0 GB/s at 16 B/LUP | interior kernel 1300.8 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda (cuda-aware) | nodes 1 | ranks 1 = 1x1x1 | threads/rank 12 | global 512x512x512 | local(rank 0) 512x512x512 | steps 200
+time 0.3338 s (1.669 ms/step) | halo wait 0.0000 s | interior 0.3322 s | 80.430 GLUP/s | 1286.9 GB/s at 16 B/LUP | interior kernel 1292.9 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 6.054e-15 (PASS, tol 1e-09) | vs continuous PDE 1.099e-08
+halo3d cuda | nodes 1 | ranks 2 = 1x1x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 1024x1024x512 | steps 200
+time 1.3303 s (6.651 ms/step) | halo wait 0.8784 s | interior 1.3267 s | 161.432 GLUP/s | 2582.9 GB/s at 16 B/LUP | interior kernel 1292.4 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda | nodes 1 | ranks 2 = 1x1x2 | threads/rank 12 | global 512x512x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.3360 s (1.680 ms/step) | halo wait 0.1830 s | interior 0.3328 s | 159.803 GLUP/s | 2556.9 GB/s at 16 B/LUP | interior kernel 1288.2 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 1.115e-14 (PASS, tol 1e-09) | vs continuous PDE 5.086e-09
+halo3d cuda (cuda-aware) | nodes 1 | ranks 2 = 1x1x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 1024x1024x512 | steps 200
+time 1.3384 s (6.692 ms/step) | halo wait 1.0438 s | interior 1.3258 s | 160.453 GLUP/s | 2567.2 GB/s at 16 B/LUP | interior kernel 1293.2 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda (cuda-aware) | nodes 1 | ranks 2 = 1x1x2 | threads/rank 12 | global 512x512x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.3442 s (1.721 ms/step) | halo wait 0.2472 s | interior 0.3328 s | 155.988 GLUP/s | 2495.8 GB/s at 16 B/LUP | interior kernel 1288.0 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 1.115e-14 (PASS, tol 1e-09) | vs continuous PDE 5.086e-09
+halo3d cuda | nodes 1 | ranks 2 = 1x1x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 1024x1024x512 | steps 200
+time 1.3298 s (6.649 ms/step) | halo wait 0.8280 s | interior 1.3264 s | 161.484 GLUP/s | 2583.7 GB/s at 16 B/LUP | interior kernel 1292.7 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda | nodes 1 | ranks 2 = 1x1x2 | threads/rank 12 | global 512x512x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.3360 s (1.680 ms/step) | halo wait 0.1722 s | interior 0.3328 s | 159.774 GLUP/s | 2556.4 GB/s at 16 B/LUP | interior kernel 1288.0 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 1.115e-14 (PASS, tol 1e-09) | vs continuous PDE 5.086e-09
+halo3d cuda (cuda-aware) | nodes 1 | ranks 2 = 1x1x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 1024x1024x512 | steps 200
+time 1.3370 s (6.685 ms/step) | halo wait 1.0337 s | interior 1.3244 s | 160.623 GLUP/s | 2570.0 GB/s at 16 B/LUP | interior kernel 1294.6 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda (cuda-aware) | nodes 1 | ranks 2 = 1x1x2 | threads/rank 12 | global 512x512x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.3439 s (1.719 ms/step) | halo wait 0.2173 s | interior 0.3325 s | 156.117 GLUP/s | 2497.9 GB/s at 16 B/LUP | interior kernel 1289.2 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 1.115e-14 (PASS, tol 1e-09) | vs continuous PDE 5.086e-09
+halo3d cuda | nodes 1 | ranks 2 = 1x1x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 1024x1024x512 | steps 200
+time 1.3280 s (6.640 ms/step) | halo wait 0.8372 s | interior 1.3247 s | 161.704 GLUP/s | 2587.3 GB/s at 16 B/LUP | interior kernel 1294.4 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda | nodes 1 | ranks 2 = 1x1x2 | threads/rank 12 | global 512x512x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.3359 s (1.680 ms/step) | halo wait 0.1783 s | interior 0.3327 s | 159.820 GLUP/s | 2557.1 GB/s at 16 B/LUP | interior kernel 1288.3 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 1.115e-14 (PASS, tol 1e-09) | vs continuous PDE 5.086e-09
+halo3d cuda (cuda-aware) | nodes 1 | ranks 2 = 1x1x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 1024x1024x512 | steps 200
+time 1.3371 s (6.685 ms/step) | halo wait 0.9607 s | interior 1.3246 s | 160.611 GLUP/s | 2569.8 GB/s at 16 B/LUP | interior kernel 1294.4 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda (cuda-aware) | nodes 1 | ranks 2 = 1x1x2 | threads/rank 12 | global 512x512x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.3440 s (1.720 ms/step) | halo wait 0.2244 s | interior 0.3325 s | 156.087 GLUP/s | 2497.4 GB/s at 16 B/LUP | interior kernel 1289.1 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 1.115e-14 (PASS, tol 1e-09) | vs continuous PDE 5.086e-09
+[gpunode01:1241046] MCW rank 0 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B/./././././././././././.][./././././././././././././././././././././././.]
+[gpunode01:1241046] MCW rank 1 bound to socket 0[core 12[hwt 0]], socket 0[core 13[hwt 0]], socket 0[core 14[hwt 0]], socket 0[core 15[hwt 0]], socket 0[core 16[hwt 0]], socket 0[core 17[hwt 0]], socket 0[core 18[hwt 0]], socket 0[core 19[hwt 0]], socket 0[core 20[hwt 0]], socket 0[core 21[hwt 0]], socket 0[core 22[hwt 0]], socket 0[core 23[hwt 0]]: [././././././././././././B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././././././././././././././.]
+[gpunode02:1280253] MCW rank 2 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B/./././././././././././.][./././././././././././././././././././././././.]
+[gpunode02:1280253] MCW rank 3 bound to socket 0[core 12[hwt 0]], socket 0[core 13[hwt 0]], socket 0[core 14[hwt 0]], socket 0[core 15[hwt 0]], socket 0[core 16[hwt 0]], socket 0[core 17[hwt 0]], socket 0[core 18[hwt 0]], socket 0[core 19[hwt 0]], socket 0[core 20[hwt 0]], socket 0[core 21[hwt 0]], socket 0[core 22[hwt 0]], socket 0[core 23[hwt 0]]: [././././././././././././B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././././././././././././././.]
+halo3d cuda | nodes 2 | ranks 4 = 1x2x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 1024x512x512 | steps 200
+time 1.0145 s (5.072 ms/step) | halo wait 0.1703 s | interior 0.6330 s | 211.685 GLUP/s | 3387.0 GB/s at 16 B/LUP | interior kernel 1353.5 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda | nodes 2 | ranks 4 = 1x2x2 | threads/rank 12 | global 512x1024x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.5126 s (2.563 ms/step) | halo wait 0.0840 s | interior 0.3212 s | 209.451 GLUP/s | 3351.2 GB/s at 16 B/LUP | interior kernel 1332.0 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 1.621e-14 (PASS, tol 1e-09) | vs continuous PDE 1.653e-09
+halo3d cuda (cuda-aware) | nodes 2 | ranks 4 = 1x2x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 1024x512x512 | steps 200
+time 1.1971 s (5.986 ms/step) | halo wait 0.5795 s | interior 0.6322 s | 179.384 GLUP/s | 2870.1 GB/s at 16 B/LUP | interior kernel 1354.4 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda (cuda-aware) | nodes 2 | ranks 4 = 1x2x2 | threads/rank 12 | global 512x1024x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.4810 s (2.405 ms/step) | halo wait 0.3529 s | interior 0.3244 s | 223.221 GLUP/s | 3571.5 GB/s at 16 B/LUP | interior kernel 1319.5 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 1.621e-14 (PASS, tol 1e-09) | vs continuous PDE 1.653e-09
+halo3d cuda | nodes 2 | ranks 4 = 1x2x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 1024x512x512 | steps 200
+time 1.0129 s (5.064 ms/step) | halo wait 0.1686 s | interior 0.6331 s | 212.019 GLUP/s | 3392.3 GB/s at 16 B/LUP | interior kernel 1353.6 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda | nodes 2 | ranks 4 = 1x2x2 | threads/rank 12 | global 512x1024x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.5152 s (2.576 ms/step) | halo wait 0.0864 s | interior 0.3212 s | 208.412 GLUP/s | 3334.6 GB/s at 16 B/LUP | interior kernel 1332.1 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 1.621e-14 (PASS, tol 1e-09) | vs continuous PDE 1.653e-09
+halo3d cuda (cuda-aware) | nodes 2 | ranks 4 = 1x2x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 1024x512x512 | steps 200
+time 1.1093 s (5.547 ms/step) | halo wait 0.4904 s | interior 0.6323 s | 193.585 GLUP/s | 3097.4 GB/s at 16 B/LUP | interior kernel 1355.4 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda (cuda-aware) | nodes 2 | ranks 4 = 1x2x2 | threads/rank 12 | global 512x1024x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.4890 s (2.445 ms/step) | halo wait 0.4005 s | interior 0.3241 s | 219.589 GLUP/s | 3513.4 GB/s at 16 B/LUP | interior kernel 1322.1 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 1.621e-14 (PASS, tol 1e-09) | vs continuous PDE 1.653e-09
+halo3d cuda | nodes 2 | ranks 4 = 1x2x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 1024x512x512 | steps 200
+time 1.0135 s (5.067 ms/step) | halo wait 0.1692 s | interior 0.6331 s | 211.891 GLUP/s | 3390.3 GB/s at 16 B/LUP | interior kernel 1353.5 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda | nodes 2 | ranks 4 = 1x2x2 | threads/rank 12 | global 512x1024x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.5154 s (2.577 ms/step) | halo wait 0.0868 s | interior 0.3212 s | 208.332 GLUP/s | 3333.3 GB/s at 16 B/LUP | interior kernel 1332.0 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 1.621e-14 (PASS, tol 1e-09) | vs continuous PDE 1.653e-09
+halo3d cuda (cuda-aware) | nodes 2 | ranks 4 = 1x2x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 1024x512x512 | steps 200
+time 1.0459 s (5.230 ms/step) | halo wait 0.4302 s | interior 0.6324 s | 205.321 GLUP/s | 3285.1 GB/s at 16 B/LUP | interior kernel 1356.0 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda (cuda-aware) | nodes 2 | ranks 4 = 1x2x2 | threads/rank 12 | global 512x1024x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.4929 s (2.465 ms/step) | halo wait 0.3684 s | interior 0.3240 s | 217.824 GLUP/s | 3485.2 GB/s at 16 B/LUP | interior kernel 1323.2 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 1.621e-14 (PASS, tol 1e-09) | vs continuous PDE 1.653e-09
+halo3d cuda | nodes 4 | ranks 8 = 2x2x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.6730 s (3.365 ms/step) | halo wait 0.1561 s | interior 0.3207 s | 319.071 GLUP/s | 5105.1 GB/s at 16 B/LUP | interior kernel 1331.6 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda | nodes 4 | ranks 8 = 2x2x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.6767 s (3.383 ms/step) | halo wait 0.1594 s | interior 0.3207 s | 317.358 GLUP/s | 5077.7 GB/s at 16 B/LUP | interior kernel 1331.6 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda (cuda-aware) | nodes 4 | ranks 8 = 2x2x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.7433 s (3.716 ms/step) | halo wait 0.3959 s | interior 0.3218 s | 288.912 GLUP/s | 4622.6 GB/s at 16 B/LUP | interior kernel 1329.9 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda (cuda-aware) | nodes 4 | ranks 8 = 2x2x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.7727 s (3.863 ms/step) | halo wait 0.4249 s | interior 0.3217 s | 277.924 GLUP/s | 4446.8 GB/s at 16 B/LUP | interior kernel 1329.2 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda | nodes 4 | ranks 8 = 2x2x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.6765 s (3.383 ms/step) | halo wait 0.1590 s | interior 0.3207 s | 317.439 GLUP/s | 5079.0 GB/s at 16 B/LUP | interior kernel 1331.7 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda | nodes 4 | ranks 8 = 2x2x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.6763 s (3.382 ms/step) | halo wait 0.1585 s | interior 0.3207 s | 317.517 GLUP/s | 5080.3 GB/s at 16 B/LUP | interior kernel 1331.5 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda (cuda-aware) | nodes 4 | ranks 8 = 2x2x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.7459 s (3.730 ms/step) | halo wait 0.3980 s | interior 0.3218 s | 287.902 GLUP/s | 4606.4 GB/s at 16 B/LUP | interior kernel 1329.9 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda (cuda-aware) | nodes 4 | ranks 8 = 2x2x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.7710 s (3.855 ms/step) | halo wait 0.4211 s | interior 0.3218 s | 278.520 GLUP/s | 4456.3 GB/s at 16 B/LUP | interior kernel 1329.5 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda | nodes 4 | ranks 8 = 2x2x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.6760 s (3.380 ms/step) | halo wait 0.1585 s | interior 0.3207 s | 317.673 GLUP/s | 5082.8 GB/s at 16 B/LUP | interior kernel 1331.8 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda | nodes 4 | ranks 8 = 2x2x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.6759 s (3.380 ms/step) | halo wait 0.1582 s | interior 0.3207 s | 317.703 GLUP/s | 5083.2 GB/s at 16 B/LUP | interior kernel 1331.5 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda (cuda-aware) | nodes 4 | ranks 8 = 2x2x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.8980 s (4.490 ms/step) | halo wait 0.5504 s | interior 0.3218 s | 239.154 GLUP/s | 3826.5 GB/s at 16 B/LUP | interior kernel 1326.8 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda (cuda-aware) | nodes 4 | ranks 8 = 2x2x2 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 512x512x512 | steps 200
+time 0.7435 s (3.718 ms/step) | halo wait 0.3956 s | interior 0.3219 s | 288.824 GLUP/s | 4621.2 GB/s at 16 B/LUP | interior kernel 1329.8 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda | nodes 8 | ranks 16 = 2x2x4 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 512x512x256 | steps 200
+time 0.4657 s (2.329 ms/step) | halo wait 0.1672 s | interior 0.1612 s | 461.129 GLUP/s | 7378.1 GB/s at 16 B/LUP | interior kernel 1321.6 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda | nodes 8 | ranks 16 = 2x2x4 | threads/rank 12 | global 1024x1024x2048 | local(rank 0) 512x512x512 | steps 200
+time 0.7215 s (3.607 ms/step) | halo wait 0.2035 s | interior 0.3208 s | 595.283 GLUP/s | 9524.5 GB/s at 16 B/LUP | interior kernel 1331.7 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 5.272e-15 (PASS, tol 1e-09) | vs continuous PDE 3.190e-10
+halo3d cuda (cuda-aware) | nodes 8 | ranks 16 = 2x2x4 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 512x512x256 | steps 200
+time 0.6572 s (3.286 ms/step) | halo wait 0.4771 s | interior 0.1611 s | 326.746 GLUP/s | 5227.9 GB/s at 16 B/LUP | interior kernel 1322.6 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda (cuda-aware) | nodes 8 | ranks 16 = 2x2x4 | threads/rank 12 | global 1024x1024x2048 | local(rank 0) 512x512x512 | steps 200
+time 0.9482 s (4.741 ms/step) | halo wait 0.5981 s | interior 0.3212 s | 452.940 GLUP/s | 7247.0 GB/s at 16 B/LUP | interior kernel 1329.9 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 5.272e-15 (PASS, tol 1e-09) | vs continuous PDE 3.190e-10
+halo3d cuda | nodes 8 | ranks 16 = 2x2x4 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 512x512x256 | steps 200
+time 0.4656 s (2.328 ms/step) | halo wait 0.1673 s | interior 0.1612 s | 461.209 GLUP/s | 7379.3 GB/s at 16 B/LUP | interior kernel 1321.6 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda | nodes 8 | ranks 16 = 2x2x4 | threads/rank 12 | global 1024x1024x2048 | local(rank 0) 512x512x512 | steps 200
+time 0.7217 s (3.609 ms/step) | halo wait 0.2037 s | interior 0.3208 s | 595.081 GLUP/s | 9521.3 GB/s at 16 B/LUP | interior kernel 1331.7 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 5.272e-15 (PASS, tol 1e-09) | vs continuous PDE 3.190e-10
+halo3d cuda (cuda-aware) | nodes 8 | ranks 16 = 2x2x4 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 512x512x256 | steps 200
+time 0.6567 s (3.283 ms/step) | halo wait 0.4770 s | interior 0.1611 s | 327.032 GLUP/s | 5232.5 GB/s at 16 B/LUP | interior kernel 1322.9 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda (cuda-aware) | nodes 8 | ranks 16 = 2x2x4 | threads/rank 12 | global 1024x1024x2048 | local(rank 0) 512x512x512 | steps 200
+time 0.9498 s (4.749 ms/step) | halo wait 0.5999 s | interior 0.3212 s | 452.181 GLUP/s | 7234.9 GB/s at 16 B/LUP | interior kernel 1329.9 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 5.272e-15 (PASS, tol 1e-09) | vs continuous PDE 3.190e-10
+halo3d cuda | nodes 8 | ranks 16 = 2x2x4 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 512x512x256 | steps 200
+time 0.4653 s (2.327 ms/step) | halo wait 0.1675 s | interior 0.1612 s | 461.511 GLUP/s | 7384.2 GB/s at 16 B/LUP | interior kernel 1321.5 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda | nodes 8 | ranks 16 = 2x2x4 | threads/rank 12 | global 1024x1024x2048 | local(rank 0) 512x512x512 | steps 200
+time 0.7223 s (3.611 ms/step) | halo wait 0.2044 s | interior 0.3208 s | 594.653 GLUP/s | 9514.5 GB/s at 16 B/LUP | interior kernel 1331.7 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 5.272e-15 (PASS, tol 1e-09) | vs continuous PDE 3.190e-10
+halo3d cuda (cuda-aware) | nodes 8 | ranks 16 = 2x2x4 | threads/rank 12 | global 1024x1024x1024 | local(rank 0) 512x512x256 | steps 200
+time 0.6569 s (3.285 ms/step) | halo wait 0.4757 s | interior 0.1611 s | 326.895 GLUP/s | 5230.3 GB/s at 16 B/LUP | interior kernel 1322.7 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 2.131e-14 (PASS, tol 1e-09) | vs continuous PDE 6.894e-10
+halo3d cuda (cuda-aware) | nodes 8 | ranks 16 = 2x2x4 | threads/rank 12 | global 1024x1024x2048 | local(rank 0) 512x512x512 | steps 200
+time 0.9493 s (4.746 ms/step) | halo wait 0.5994 s | interior 0.3213 s | 452.436 GLUP/s | 7239.0 GB/s at 16 B/LUP | interior kernel 1329.8 GB/s (rank 0 GPU)
+rel. L2 error vs exact discrete solution 5.272e-15 (PASS, tol 1e-09) | vs continuous PDE 3.190e-10
