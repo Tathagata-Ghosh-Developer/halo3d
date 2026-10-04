@@ -1,0 +1,8 @@
+bin/
+*.o
+*.out
+__pycache__/
+.vscode/
+*.nsys-rep
+*.ncu-rep
+notes/
